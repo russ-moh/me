@@ -1,0 +1,16 @@
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+.work-card{transition:transform .35s ease,box-shadow .35s ease}
+.work-card:hover{transform:translateY(-7px);box-shadow:0 18px 38px rgba(23,33,39,.13)}
+.work-toggle{padding:.65rem 0;margin:.45rem 0 0;background:transparent;border:0;border-top:1px solid var(--rule);color:var(--green);cursor:pointer;font:800 .72rem var(--sans);letter-spacing:.1em;text-align:left;text-transform:uppercase;width:100%}
+.work-toggle span{float:right;font-size:1.2rem;line-height:.65;transition:transform .25s ease}
+.work-toggle[aria-expanded="true"] span{transform:rotate(45deg)}
+.work-detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.work-detail p{overflow:hidden;margin:0;color:var(--mute);font-size:.88rem}
+.work-card.is-open .work-detail{grid-template-rows:1fr}
+.work-card.is-open .work-detail p{padding:.65rem 0}
+@media(min-width:761px){.work-card>.work-toggle{margin-top:auto}.work-card>.outcome{height:5.25rem;min-height:5.25rem;margin-top:1rem}}
+.keynote{margin:0 -2rem;padding:6.5rem max(2rem,calc((100vw - 1280px)/2));background:#dce7db;display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}.keynote h2{font:400 clamp(3rem,5vw,5rem)/.95 var(--serif);letter-spacing:-.05em;margin:0}.keynote p:last-child{color:var(--mute);max-width:420px}.keynote figure{margin:0}.keynote img{display:block;width:100%;max-height:620px;object-fit:cover;object-position:center}.keynote figcaption{margin-top:.75rem;color:var(--mute);font-size:.75rem}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(max-width:760px){.keynote{margin:0 -1.2rem;padding:4.5rem 1.2rem;grid-template-columns:1fr;gap:2rem}}
+.portrait figcaption{position:relative;z-index:2;display:inline-block;background:var(--paper);padding:.45rem .55rem .35rem 0}
