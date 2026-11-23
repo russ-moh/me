@@ -8,7 +8,7 @@ This is a buildless static site. Connect this repository to Cloudflare Pages and
 
 - Framework preset: None
 - Build command: *(leave blank)*
-- Build output directory: `/`
+- Build output directory: `./`
 
 ## Privacy guardrail
 
