@@ -1,10 +1,12 @@
 /* A tighter opening frame: enough presence to set the tone, without delaying the work. */
 .nav-wrap{margin-top:8px;padding:.78rem 1.2rem}
 .hero-landing{min-height:470px;padding:3.45rem 3.4rem 2.65rem;gap:2.35rem}
-.hero-landing h1{max-width:610px;font-size:clamp(3.2rem,4.75vw,5rem)}
+.hero-landing h1{max-width:660px;font-size:clamp(3.2rem,4.25vw,4.5rem);text-wrap:wrap}
 .hero-landing .intro-text{max-width:515px;font-size:1rem}
 .portrait-conference{width:min(100%,300px);padding:8px;transform:translateY(2px) rotate(1.1deg)}
 .portrait-conference img{height:300px;aspect-ratio:auto;object-position:76% 62%}
+.evidence-section .section-heading{max-width:1120px}
+.evidence-section .section-heading h2{font-size:clamp(2.85rem,4.25vw,4.55rem);text-wrap:wrap}
 
 @media(max-width:1050px){
   .hero-landing{min-height:0;padding:3.25rem 2.7rem 2.65rem;gap:2rem}
