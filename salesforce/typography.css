@@ -1,0 +1,5 @@
+/* One consistent, publicly embeddable type system for this standalone page. */
+:root{
+  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  --serif:"Inter","Helvetica Neue",Arial,sans-serif;
+}
