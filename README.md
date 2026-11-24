@@ -1,6 +1,6 @@
-# Nowruss Mohammad — Professional Site
+# Russ Mohammad — Professional Site
 
-Private source repository for Nowruss Mohammad's professional portfolio.
+Source repository for Russ Mohammad's professional portfolio.
 
 ## Deploying
 
@@ -8,7 +8,7 @@ This is a buildless static site. Connect this repository to Cloudflare Pages and
 
 - Framework preset: None
 - Build command: *(leave blank)*
-- Build output directory: `./`
+- Build output directory: `/`
 
 ## Privacy guardrail
 
