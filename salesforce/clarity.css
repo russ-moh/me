@@ -1,2 +1,9 @@
 /* A calmer type scale and explicit in-page orientation for the personal landing page. */
 .hero-landing h1{letter-spacing:-.055em;line-height:.98;text-wrap:balance}.operator-brief-intro h2{letter-spacing:-.055em;line-height:.98;text-wrap:balance}.quick-index h2{letter-spacing:-.055em;line-height:.96;text-wrap:balance}.section-heading h2,.section h2,.keynote h2,.field-notes h2{letter-spacing:-.052em;line-height:.98;text-wrap:balance}.page-hero h1,.case-grid h2{letter-spacing:-.052em;line-height:.98}.resume-top h1{letter-spacing:-.045em;line-height:.98}.resume-role h3{letter-spacing:-.022em;line-height:1.12}.nav-wrap nav{align-items:center;gap:.18rem}.nav-wrap nav a{border:1px solid transparent;border-radius:999px;color:var(--mute);padding:.42rem .64rem;transition:background .2s ease,color .2s ease,border-color .2s ease}.nav-wrap nav a:hover{color:#fff;background:rgba(255,255,255,.09)}.nav-wrap nav a[aria-current="location"]{border-color:rgba(99,223,78,.72);background:var(--green);color:#032d42;font-weight:800}.hero-landing,.operator-brief,.section,.field-notes{scroll-margin-top:6rem}@media(max-width:760px){.hero-landing h1{letter-spacing:-.047em;line-height:1.01}.operator-brief-intro h2{letter-spacing:-.048em;line-height:1}.quick-index h2{letter-spacing:-.048em;line-height:1}}
+
+.decision-atlas, #layers, .work-card, #claude-skill, #keynote { scroll-margin-top: 6rem; }
+.search-results:empty { min-height: 0; margin-top: 0; }
+
+@media (max-width: 760px) {
+  .hero-landing h1 em { font-size: .8em; }
+}

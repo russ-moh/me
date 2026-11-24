@@ -21,13 +21,23 @@ if (inPageNav.length && inPageSections.length) {
     });
   };
 
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) setActiveSection(entry.target.id);
-    });
-  }, { rootMargin: '-22% 0px -68% 0px', threshold: 0.01 });
+  const navHeader = inPageNav[0].closest('.nav-wrap');
+  let activeSectionId;
 
-  inPageSections.forEach((section) => navObserver.observe(section));
+  const updateActiveSection = () => {
+    const readingLine = navHeader.getBoundingClientRect().bottom + 30;
+    const activeSection = inPageSections.findLast((section) => section.getBoundingClientRect().top <= readingLine)
+      ?? inPageSections[0];
+
+    if (activeSection.id !== activeSectionId) {
+      activeSectionId = activeSection.id;
+      setActiveSection(activeSectionId);
+    }
+  };
+
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  window.addEventListener('resize', updateActiveSection);
+  updateActiveSection();
 }
 
 document.querySelectorAll('.work-toggle').forEach((button) => {
@@ -35,23 +45,31 @@ document.querySelectorAll('.work-toggle').forEach((button) => {
     const card = button.closest('.work-card');
     const isOpen = card.classList.toggle('is-open');
     button.setAttribute('aria-expanded', String(isOpen));
+    card.querySelector('.work-detail').setAttribute('aria-hidden', String(!isOpen));
   });
 });
 
 const layerContent = {
-  1: ['01 / 06', 'Name the decision before you name the product.', 'Clarify what the team is actually deciding, who feels the friction, and what needs to be true for the investment to be worth making.'],
-  2: ['02 / 06', 'Follow the work people actually do.', 'Trace the handoffs, exceptions, and points of delay that determine whether a future state will make life better—or simply add another layer.'],
-  3: ['03 / 06', 'Give the technical story a backbone.', 'Translate systems, data, integrations, security, and compliance into a point of view that can earn confidence with both executives and practitioners.'],
-  4: ['04 / 06', 'Build something people can challenge.', 'Create the smallest tailored experience that makes the proposed workflow tangible: a demo, portal, hands-on lab, or working scenario.'],
-  5: ['05 / 06', 'Make trust part of the build.', 'Bring adoption, controls, quality, and governance into the proof early—before they become late-stage reasons to hesitate.'],
-  6: ['06 / 06', 'Leave the account stronger than you found it.', 'Package the story, the decisions, and the assets so the account team and specialists can carry the work forward without you in the room.']
+  1: ["Understand the workflow", "I talk with leaders and the people who do the work. I follow the handoffs, exceptions, and decisions to understand where the process breaks down and who feels it."],
+  2: ["Find and refine use cases", "I work with the customer to turn what we learn into use cases. We refine them as we uncover constraints and agree on what an evaluation needs to show."],
+  3: ["Build a working example", "I build demos and proofs of concept around realistic scenarios. When AI is part of the solution, I show where it fits in the workflow and what people can test for themselves."],
+  4: ["Test the details", "I test the workflow with colleagues, check product capabilities with specialists, and follow up on open technical questions. Customers need a clear picture of what they can rely on."],
+  5: ["Share what worked", "I document the choices that shaped the proof and share useful demo environments, lab guides, or test plans so colleagues can build on them."]
 };
 const layerDetail = document.querySelector('.layer-detail');
-document.querySelectorAll('.layer-node').forEach((node) => node.addEventListener('click', () => {
-  const item = layerContent[node.dataset.layer];
-  document.querySelectorAll('.layer-node').forEach((button) => button.classList.remove('active'));
-  node.classList.add('active');
-  if (layerDetail) layerDetail.innerHTML = `<p class="layer-count">${item[0]}</p><h3>${item[1]}</h3><p>${item[2]}</p>`;
+const layerButtons = document.querySelectorAll('.layer-node');
+
+layerButtons.forEach((button) => button.addEventListener('click', () => {
+  const [title, description] = layerContent[button.dataset.layer];
+
+  layerButtons.forEach((node) => {
+    const isActive = node === button;
+    node.classList.toggle('active', isActive);
+    node.setAttribute('aria-pressed', String(isActive));
+  });
+
+  layerDetail.querySelector('h3').textContent = title;
+  layerDetail.querySelector('p').textContent = description;
 }));
 
 const siteSearch = document.querySelector('#site-search');
@@ -60,23 +78,19 @@ const searchResults = document.querySelector('#search-results');
 
 if (siteSearch && siteSearchForm && searchResults) {
   const searchIndex = [
-    { title: 'Competitive POC: reframe a late-stage evaluation', description: 'Late-entry HCLS pursuit, pressure-tested proof, and a competitive displacement.', type: 'Work', href: '#evidence', terms: 'competitive poc vendor displacement proof concept discovery demo executive diagnostics' },
-    { title: 'AI workflow proof', description: 'A tailored AI workflow grounded in real process, adoption, and technical guardrails.', type: 'Work', href: '#evidence', terms: 'ai workflow artificial intelligence automation proof demo guardrails' },
-    { title: 'Leadership in the work', description: 'Coaching, interview support, manager coverage, deal guidance, enablement, and a stronger operating rhythm.', type: 'Leadership', href: '#leadership', terms: 'leadership manager coaching enablement hiring interviewing team coverage mentorship' },
-    { title: 'Clinical operations foundation', description: 'A decade from clinical operations to life sciences and enterprise presales.', type: 'Experience', href: '#experience', terms: 'clinical operations epic healthcare life sciences patient workflow adoption reporting' },
-    { title: 'Reusable field assets', description: 'Microsites, portals, lab guides, testing plans, executive decks, and practical artifacts teams can reuse.', type: 'Leadership', href: '#leadership', terms: 'microsite portal assets lab guide enablement testing technical story' },
-    { title: 'Technical storytelling in a live room', description: 'Mainstage keynotes, event delivery, and clear stories built from field work.', type: 'Leadership', href: '#leadership', terms: 'keynote stage event speaker presentation storytelling knowledge forum' }
+    { title: 'A hands-on AI proof of value', description: 'A guided evaluation of agentic skills and workflows for life sciences.', type: 'Work', href: '#ai-proof', terms: 'ai workflow artificial intelligence agent agentic proof of value poc automation demo' },
+    { title: 'Redesigning a patient services demo', description: 'Discovery, sample patient cases, and AI-assisted analysis for a contract research organization.', type: 'Work', href: '#research-workflow', terms: 'cro clinical research patient services pocs knowledge automation AI workflow renewal discovery' },
+    { title: 'A simpler path for corrective actions', description: 'Checking product capabilities before recommending a way to support an 8D process.', type: 'Work', href: '#quality-workflow', terms: '8d medtech quality portal process technical validation corrective actions' },
+    { title: 'A Claude skill for building demos', description: 'A tool solution consultants use to create customer-specific demos quickly and accurately.', type: 'Leadership', href: '#claude-skill', terms: 'claude skill ai leadership enablement team reusable demo adoption' },
+    { title: 'Coaching and enablement', description: 'Coaching, interview support, and hands-on work with other solution consultants.', type: 'Leadership', href: '#leadership', terms: 'leadership coaching enablement hiring interviewing team coverage mentorship' },
+    { title: 'Clinical operations and enterprise presales', description: 'Epic Ambulatory workflows, a clinical medicine background, and enterprise solution consulting.', type: 'Background', href: '#experience', terms: 'clinical operations epic healthcare life sciences patient workflow adoption reporting resume résumé' },
+    { title: 'Chicago World Forum keynote', description: 'A live demo on the main stage at ServiceNow’s Chicago event.', type: 'Speaking', href: '#keynote', terms: 'keynote stage event speaker presentation forum public speaking' }
   ];
 
   const renderSearch = (value) => {
     const query = value.trim().toLowerCase();
     searchResults.replaceChildren();
-    if (!query) {
-      const hint = document.createElement('p');
-      hint.textContent = 'Search a theme to find the work behind the claim.';
-      searchResults.append(hint);
-      return;
-    }
+    if (!query) return;
 
     const tokens = query.split(/\s+/).filter(Boolean);
     const matches = searchIndex.filter((item) => {
@@ -86,7 +100,7 @@ if (siteSearch && siteSearchForm && searchResults) {
 
     if (!matches.length) {
       const empty = document.createElement('p');
-      empty.textContent = 'No exact match yet. Try “leadership,” “POC,” “AI workflow,” or “clinical operations.”';
+      empty.textContent = 'No results. Try “AI workflow,” “Claude skill,” or “clinical operations.”';
       searchResults.append(empty);
       return;
     }
