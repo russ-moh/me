@@ -49,29 +49,6 @@ document.querySelectorAll('.work-toggle').forEach((button) => {
   });
 });
 
-const layerContent = {
-  1: ["Understand the workflow", "I talk with leaders and the people who do the work. I follow the handoffs, exceptions, and decisions to understand where the process breaks down and who feels it."],
-  2: ["Find and refine use cases", "I work with the customer to turn what we learn into use cases. We refine them as we uncover constraints and agree on what an evaluation needs to show."],
-  3: ["Build a working example", "I build demos and proofs of concept around realistic scenarios. When AI is part of the solution, I show where it fits in the workflow and what people can test for themselves."],
-  4: ["Test the details", "I test the workflow with colleagues, check product capabilities with specialists, and follow up on open technical questions. Customers need a clear picture of what they can rely on."],
-  5: ["Share what worked", "I document the choices that shaped the proof and share useful demo environments, lab guides, or test plans so colleagues can build on them."]
-};
-const layerDetail = document.querySelector('.layer-detail');
-const layerButtons = document.querySelectorAll('.layer-node');
-
-layerButtons.forEach((button) => button.addEventListener('click', () => {
-  const [title, description] = layerContent[button.dataset.layer];
-
-  layerButtons.forEach((node) => {
-    const isActive = node === button;
-    node.classList.toggle('active', isActive);
-    node.setAttribute('aria-pressed', String(isActive));
-  });
-
-  layerDetail.querySelector('h3').textContent = title;
-  layerDetail.querySelector('p').textContent = description;
-}));
-
 const siteSearch = document.querySelector('#site-search');
 const siteSearchForm = document.querySelector('#site-search-form');
 const searchResults = document.querySelector('#search-results');
