@@ -39,12 +39,12 @@ document.querySelectorAll('.work-toggle').forEach((button) => {
 });
 
 const layerContent = {
-  1: ['01 / 06', 'Start with the outcome, not the product.', 'Clarify what needs to change, where the friction is felt, and what must be true for the investment to earn a decision.'],
-  2: ['02 / 06', 'Follow the workflow people actually live in.', 'Make the future state believable by tracing real handoffs, exceptions, and moments where operational work slows down.'],
-  3: ['03 / 06', 'Turn architecture into confidence.', 'Translate systems, data, integrations, security, and compliance into a technical point of view both executives and practitioners can trust.'],
-  4: ['04 / 06', 'Build proof someone can test.', 'Create the smallest tailored experience that makes the proposed workflow tangible: a demo, portal, hands-on lab, or working scenario.'],
-  5: ['05 / 06', 'Make trust visible.', 'Bring adoption, controls, quality, and governance into the proof before they become late-stage reasons to hesitate.'],
-  6: ['06 / 06', 'Leave the field with a system.', 'Package the story, decisions, and assets so the account team and specialists can carry the work forward without you in the room.']
+  1: ['01 / 06', 'Name the decision before you name the product.', 'Clarify what the team is actually deciding, who feels the friction, and what needs to be true for the investment to be worth making.'],
+  2: ['02 / 06', 'Follow the work people actually do.', 'Trace the handoffs, exceptions, and points of delay that determine whether a future state will make life better—or simply add another layer.'],
+  3: ['03 / 06', 'Give the technical story a backbone.', 'Translate systems, data, integrations, security, and compliance into a point of view that can earn confidence with both executives and practitioners.'],
+  4: ['04 / 06', 'Build something people can challenge.', 'Create the smallest tailored experience that makes the proposed workflow tangible: a demo, portal, hands-on lab, or working scenario.'],
+  5: ['05 / 06', 'Make trust part of the build.', 'Bring adoption, controls, quality, and governance into the proof early—before they become late-stage reasons to hesitate.'],
+  6: ['06 / 06', 'Leave the account stronger than you found it.', 'Package the story, the decisions, and the assets so the account team and specialists can carry the work forward without you in the room.']
 };
 const layerDetail = document.querySelector('.layer-detail');
 document.querySelectorAll('.layer-node').forEach((node) => node.addEventListener('click', () => {
@@ -60,12 +60,12 @@ const searchResults = document.querySelector('#search-results');
 
 if (siteSearch && siteSearchForm && searchResults) {
   const searchIndex = [
-    { title: 'Competitive POC: build the decision room', description: 'Late-entry HCLS pursuit, executive narrative, pressure-tested proof, and a competitive displacement.', type: 'Work', href: '#evidence', terms: 'competitive poc vendor displacement proof concept discovery demo executive diagnostics' },
-    { title: 'AI workflow proof', description: 'Tailored AI workflow storytelling anchored in real process, adoption, and technical guardrails.', type: 'Work', href: '#evidence', terms: 'ai workflow artificial intelligence automation proof demo guardrails' },
-    { title: 'Leadership system', description: 'Coaching, interview support, manager coverage, deal guidance, enablement, and team operating rhythm.', type: 'Leadership', href: '#leadership', terms: 'leadership manager coaching enablement hiring interviewing team coverage mentorship' },
-    { title: 'Clinical operations foundation', description: 'A decade across healthcare, life sciences, clinical operations, and enterprise presales.', type: 'Experience', href: '#experience', terms: 'clinical operations epic healthcare life sciences patient workflow adoption reporting' },
-    { title: 'Reusable field assets', description: 'Microsites, portals, lab guides, testing plans, executive decks, and artifacts teams can reuse.', type: 'Leadership', href: '#leadership', terms: 'microsite portal assets lab guide enablement testing technical story' },
-    { title: 'Technical storytelling on stage', description: 'Mainstage keynote, event delivery, and turning field work into a commercial story people remember.', type: 'Leadership', href: '#leadership', terms: 'keynote stage event speaker presentation storytelling knowledge forum' }
+    { title: 'Competitive POC: reframe a late-stage evaluation', description: 'Late-entry HCLS pursuit, pressure-tested proof, and a competitive displacement.', type: 'Work', href: '#evidence', terms: 'competitive poc vendor displacement proof concept discovery demo executive diagnostics' },
+    { title: 'AI workflow proof', description: 'A tailored AI workflow grounded in real process, adoption, and technical guardrails.', type: 'Work', href: '#evidence', terms: 'ai workflow artificial intelligence automation proof demo guardrails' },
+    { title: 'Leadership in the work', description: 'Coaching, interview support, manager coverage, deal guidance, enablement, and a stronger operating rhythm.', type: 'Leadership', href: '#leadership', terms: 'leadership manager coaching enablement hiring interviewing team coverage mentorship' },
+    { title: 'Clinical operations foundation', description: 'A decade from clinical operations to life sciences and enterprise presales.', type: 'Experience', href: '#experience', terms: 'clinical operations epic healthcare life sciences patient workflow adoption reporting' },
+    { title: 'Reusable field assets', description: 'Microsites, portals, lab guides, testing plans, executive decks, and practical artifacts teams can reuse.', type: 'Leadership', href: '#leadership', terms: 'microsite portal assets lab guide enablement testing technical story' },
+    { title: 'Technical storytelling in a live room', description: 'Mainstage keynotes, event delivery, and clear stories built from field work.', type: 'Leadership', href: '#leadership', terms: 'keynote stage event speaker presentation storytelling knowledge forum' }
   ];
 
   const renderSearch = (value) => {
@@ -73,7 +73,7 @@ if (siteSearch && siteSearchForm && searchResults) {
     searchResults.replaceChildren();
     if (!query) {
       const hint = document.createElement('p');
-      hint.textContent = 'Search a theme to surface the most relevant proof.';
+      hint.textContent = 'Search a theme to find the work behind the claim.';
       searchResults.append(hint);
       return;
     }
