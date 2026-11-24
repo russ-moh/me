@@ -39,12 +39,11 @@ document.querySelectorAll('.work-toggle').forEach((button) => {
 });
 
 const layerContent = {
-  1: ['01 / 06', 'Name the decision before you name the product.', 'Clarify what the team is actually deciding, who feels the friction, and what needs to be true for the investment to be worth making.'],
-  2: ['02 / 06', 'Follow the work people actually do.', 'Trace the handoffs, exceptions, and points of delay that determine whether a future state will make life better—or simply add another layer.'],
-  3: ['03 / 06', 'Give the technical story a backbone.', 'Translate systems, data, integrations, security, and compliance into a point of view that can earn confidence with both executives and practitioners.'],
-  4: ['04 / 06', 'Build something people can challenge.', 'Create the smallest tailored experience that makes the proposed workflow tangible: a demo, portal, hands-on lab, or working scenario.'],
-  5: ['05 / 06', 'Make trust part of the build.', 'Bring adoption, controls, quality, and governance into the proof early—before they become late-stage reasons to hesitate.'],
-  6: ['06 / 06', 'Leave the account stronger than you found it.', 'Package the story, the decisions, and the assets so the account team and specialists can carry the work forward without you in the room.']
+  1: ['01 / 05', 'Study the problem.', 'Spend time with the people, handoffs, decisions, exceptions, and constraints that define the work. The goal is a shared understanding of what is actually hard.'],
+  2: ['02 / 05', 'Choose a use case worth solving.', 'Turn discovery into one focused problem with a clear owner, a meaningful outcome, and enough value to make the next decision worth it.'],
+  3: ['03 / 05', 'Build the proof.', 'Create a POC, workflow environment, or working session that lets people test the idea against the work they know—rather than asking them to imagine it.'],
+  4: ['04 / 05', 'Plan for adoption early.', 'Bring dependencies, guardrails, change, and handoffs into the conversation before they become late-stage blockers. A good evaluation clarifies what comes next.'],
+  5: ['05 / 05', 'Make the next team faster.', 'Turn successful work into something the team can use again: a reusable demo environment, enablement session, or asset that gives the next customer a better starting point.']
 };
 const layerDetail = document.querySelector('.layer-detail');
 document.querySelectorAll('.layer-node').forEach((node) => node.addEventListener('click', () => {
