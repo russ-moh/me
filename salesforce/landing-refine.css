@@ -1,0 +1,3 @@
+.field-notes{grid-template-columns:.9fr 1.1fr}
+@media(max-width:1050px){.field-notes{grid-template-columns:1fr 1fr}.field-notes-copy{grid-column:auto}}
+@media(max-width:760px){.field-notes{grid-template-columns:1fr}}
