@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..750&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" />
-    <link rel="stylesheet" href="sierra.css" />
-    <script src="sierra.js" defer></script>
+    <link rel="stylesheet" href="sierra.css?v=voice" />
+    <script src="sierra.js?v=voice" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#top">Skip to content</a>
@@ -37,7 +37,11 @@
         <div class="container hero-inner">
           <div class="hero-copy">
             <p class="eyebrow">Enterprise sales engineering</p>
-            <h1 id="intro-title">Hands-on sales engineering <em>for healthcare.</em></h1>
+            <h1 id="intro-title">
+              <span>Hands-on sales</span>
+              <span>engineering</span>
+              <em>for healthcare.</em>
+            </h1>
             <p class="hero-intro">I started at Rush, working with clinicians and IT on Epic workflows. At ServiceNow, I lead technical evaluations for healthcare and life sciences customers and build proofs of value they can run themselves.</p>
             <div class="actions">
               <a class="button button-primary" href="#evidence">See customer work</a>
@@ -138,56 +142,74 @@
 
           <section class="evaluation" id="patient-access" aria-labelledby="evaluation-title">
             <div class="evaluation-intro">
-              <div>
-                <p class="eyebrow">Scripted example with fictional data</p>
-                <h3 id="evaluation-title">What I’d test in a scheduling agent</h3>
-                <p>I’d start with a routine appointment change. The evaluation should show how the agent uses verified information and what it does when a person needs to take over.</p>
-              </div>
-              <div class="scenario-controls" role="group" aria-label="Scheduling test scenarios" hidden>
-                <button type="button" aria-pressed="true" aria-controls="evaluation-display" data-scenario="available">Times available</button>
-                <button type="button" aria-pressed="false" aria-controls="evaluation-display" data-scenario="unavailable">Scheduling unavailable</button>
-                <button type="button" aria-pressed="false" aria-controls="evaluation-display" data-scenario="handoff">Patient asks for staff</button>
-              </div>
+              <p class="eyebrow">Voice agent evaluation · Synthetic data</p>
+              <h3 id="evaluation-title">Can the caller reschedule?</h3>
+              <p>Play the caller or run a test. Open the trace to see which tools the agent used, what the scheduling system saved, and what staff receive when a call needs a handoff.</p>
             </div>
-            <div class="evaluation-display" id="evaluation-display">
-              <div class="workflow-map" role="group" aria-labelledby="workflow-title">
-                <p class="eyebrow" id="workflow-title">Request path</p>
-                <div class="workflow-stem">
-                  <div class="workflow-node">
-                    <span>Patient</span>
-                    <strong id="path-request">Move an appointment</strong>
-                  </div>
-                  <div class="workflow-node">
-                    <span>Agent</span>
-                    <strong id="path-agent">Check for open times</strong>
-                  </div>
+
+            <div class="voice-demo" id="voice-demo" hidden>
+              <div class="voice-toolbar">
+                <div class="scenario-controls" role="group" aria-label="Choose a voice agent test">
+                  <button type="button" aria-pressed="true" aria-controls="voice-session" data-test="reschedule">Confirm a reschedule</button>
+                  <button type="button" aria-pressed="false" aria-controls="voice-session" data-test="conflict">Slot taken</button>
+                  <button type="button" aria-pressed="false" aria-controls="voice-session" data-test="unverified">Caller can’t verify</button>
                 </div>
-                <div class="workflow-branches">
-                  <div class="workflow-node workflow-branch" id="path-scheduling" data-active="true">
-                    <span>Scheduling system</span>
-                    <strong id="path-scheduling-status">Times verified</strong>
-                  </div>
-                  <div class="workflow-node workflow-branch" id="path-staff" data-active="false">
-                    <span>Scheduling team</span>
-                    <strong id="path-staff-status">No handoff needed</strong>
-                  </div>
+                <div class="voice-run-actions">
+                  <button class="button button-primary" id="run-test" type="button">Run test</button>
+                  <button class="button button-outline" id="reset-test" type="button">Reset</button>
                 </div>
               </div>
-              <div class="scenario" id="scenario-result" aria-live="polite" aria-atomic="true">
-                <div class="scenario-message">
-                  <p class="eyebrow">Patient</p>
-                  <p id="scenario-request">“I’d like to move my appointment.”</p>
+
+              <div class="voice-session" id="voice-session">
+                <div class="voice-session-header">
+                  <div>
+                    <p class="eyebrow">Patient access</p>
+                    <h4>Specialty appointment line</h4>
+                  </div>
+                  <p class="voice-status" id="call-status">Awaiting verification</p>
                 </div>
-                <div class="scenario-message">
-                  <p class="eyebrow">Example agent response</p>
-                  <p id="scenario-response">“I found openings Tuesday at 10 a.m. and Thursday at 2 p.m. Which works for you?”</p>
+
+                <ol class="voice-route" aria-label="Progress through the call">
+                  <li id="route-verify" data-state="current" aria-current="step">Verify caller</li>
+                  <li id="route-lookup" data-state="pending">Find a time</li>
+                  <li id="route-resolve" data-state="pending">Resolve or hand off</li>
+                </ol>
+
+                <div class="voice-workspace">
+                  <section class="voice-panel" aria-labelledby="transcript-title">
+                    <div class="voice-panel-heading">
+                      <h5 id="transcript-title">Call transcript</h5>
+                      <button class="voice-listen" type="button" id="listen-reply" hidden>Listen to reply</button>
+                    </div>
+                    <ol class="voice-transcript" id="call-transcript"></ol>
+                    <div class="voice-actions" id="caller-actions" role="group" aria-label="Respond as the caller"></div>
+                  </section>
+
+                  <section class="voice-panel voice-trace-panel" aria-labelledby="trace-title">
+                    <div class="voice-panel-heading">
+                      <h5 id="trace-title">Tool trace</h5>
+                    </div>
+                    <ol class="voice-trace" id="tool-trace"></ol>
+                    <div class="voice-record" id="mock-record">
+                      <p class="eyebrow">Appointment record</p>
+                      <p id="record-summary">Protected until verification</p>
+                      <p id="case-summary" hidden></p>
+                    </div>
+                  </section>
                 </div>
-                <div class="scenario-check">
-                  <p class="eyebrow">What I’d verify</p>
-                  <p id="scenario-check">The times come from the scheduling system. The agent confirms a change only after the patient agrees and the system records it.</p>
-                </div>
+
+                <section class="voice-evaluation" aria-labelledby="checks-title">
+                  <h5 id="checks-title">Acceptance checks</h5>
+                  <ul id="test-checks"></ul>
+                </section>
               </div>
+              <p class="sr-only" id="call-announcement" role="status"></p>
             </div>
+
+            <noscript>
+              <p class="voice-note">The browser simulation uses JavaScript to run verified booking changes, slot conflicts, and handoffs when identity can’t be verified.</p>
+            </noscript>
+            <p class="voice-note">The simulation runs in this browser with mock scheduling and case records. The test design draws on <a href="https://www.servicenow.com/docs/r/intelligent-experiences/test-ai-voice-agents.html">ServiceNow’s voice agent testing</a> and <a href="https://www.servicenow.com/docs/r/intelligent-experiences/deploy-ai-agents-for-voice.html">handoff patterns</a>.</p>
           </section>
         </div>
       </section>
