@@ -918,10 +918,18 @@ details p { margin-top: .68rem; }
 .role-positions { grid-column: 2; display: grid; gap: .9rem; }
 .role-position + .role-position { padding-top: .85rem; border-top: 1px solid var(--line); }
 .role-position > p { margin-top: .35rem; }
+.role-accomplishments {
+  display: grid;
+  gap: .38rem;
+  margin: .6rem 0 0;
+  padding-inline-start: 1.2rem;
+  color: var(--muted);
+}
+.role-accomplishments ::marker { color: var(--green); }
 .role-title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .15rem .9rem; }
 .role-title h4, .education h4 { margin: 0; font-size: 1.06rem; line-height: 1.32; }
 .role-date { font-size: .88rem; font-weight: 650; }
-.role .role-note { color: var(--green); font-size: .9rem; font-weight: 650; }
+.role .role-note { margin-top: .7rem; color: var(--green); font-size: .9rem; font-weight: 650; }
 
 .education {
   margin-top: clamp(1.6rem, 4vw, 2.7rem);
