@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..750&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" />
-    <link rel="stylesheet" href="sierra.css?v=background" />
+    <link rel="stylesheet" href="sierra.css?v=payer" />
     <script src="sierra.js?v=depth" defer></script>
   </head>
   <body>
@@ -83,18 +83,34 @@
           <h2 id="evidence-title">Selected customer work</h2>
         </div>
 
-        <article class="featured-case" id="ai-proof">
-          <div class="featured-copy">
-            <p class="eyebrow">Enterprise life sciences company</p>
-            <h3>A hands-on AI evaluation</h3>
-            <p>I led the technical evaluation for a customer working to coordinate a complex workflow across teams. We built a guided experience that combined agentic skills and workflows, so customer teams could run realistic scenarios themselves and judge how the proposed solution fit their work.</p>
-          </div>
-          <div class="featured-result">
-            <p class="eyebrow">Result</p>
-            <p class="featured-result-title">Technical win</p>
-            <p>ServiceNow was named vendor of choice for the ongoing $5M opportunity.</p>
-          </div>
-        </article>
+        <div class="featured-cases">
+          <article class="featured-case" id="ai-proof">
+            <div class="featured-copy">
+              <p class="eyebrow">Enterprise life sciences company</p>
+              <h3>A hands-on AI evaluation</h3>
+              <p>I led the technical evaluation for a customer working to coordinate a complex workflow across teams. We built a guided experience that combined agentic skills and workflows, so customer teams could run realistic scenarios themselves and judge how the proposed solution fit their work.</p>
+            </div>
+            <div class="featured-result">
+              <p class="eyebrow">Result</p>
+              <p class="featured-result-title">Technical win</p>
+              <p>ServiceNow was named vendor of choice for the ongoing $5M opportunity.</p>
+            </div>
+          </article>
+
+          <article class="featured-case featured-case-payer" id="payer-workflow">
+            <div class="featured-copy">
+              <p class="eyebrow">Payer operations</p>
+              <h3>A payer’s intake decision</h3>
+              <p>A health plan had to decide whether to extend its free-text intake app or move to a supported healthcare workflow. I rebuilt the onsite demo around its routing rules to show operations and IT how structured intake could work across teams. I flagged an open encryption question for follow-up.</p>
+              <p class="featured-reuse">The team reused my demo environment and talk tracks across <strong>three health plans</strong>.</p>
+            </div>
+            <div class="featured-result">
+              <p class="eyebrow">Result</p>
+              <p class="featured-result-title">Signed order form</p>
+              <p>The health plan chose ServiceNow’s healthcare solution.</p>
+            </div>
+          </article>
+        </div>
 
         <div class="case-grid">
           <article class="case-card" id="research-workflow">
@@ -106,17 +122,6 @@
               <p>I used sample patient records, cases, and interactions to show how intake, case management, AI-assisted analysis, and follow-up could work together. I also brought in advisory support to address an implementation funding gap.</p>
             </details>
             <div class="case-result"><strong>Result</strong><p>We prevented a debook and opened a $1M expansion opportunity.</p></div>
-          </article>
-
-          <article class="case-card" id="payer-workflow">
-            <p class="eyebrow">Health plan</p>
-            <h3>Reframing a build-or-buy decision</h3>
-            <p>A health plan was weighing a custom intake app against a healthcare workflow. I rebuilt the onsite demo around the decision its operations and IT teams had to make, starting with intake, routing, and how more teams could use it.</p>
-            <details>
-              <summary>How I approached it</summary>
-              <p>The existing app relied on free-text intake. I used the customer’s own routing model to show what a structured workflow could support and flagged an open encryption question for follow-up.</p>
-            </details>
-            <div class="case-result"><strong>Result</strong><p>The customer signed an order form for ServiceNow’s healthcare solution.</p></div>
           </article>
 
           <article class="case-card" id="quality-workflow">
@@ -236,6 +241,10 @@
             <noscript>
               <p class="voice-note">The browser simulation uses JavaScript to run verified booking changes, slot conflicts, and handoffs when identity can’t be verified.</p>
             </noscript>
+            <section class="demo-launch" id="demo-to-launch" aria-labelledby="demo-launch-title">
+              <h4 id="demo-launch-title">Bringing it to life with Sierra</h4>
+              <p>A demo lets the customer see what’s possible. The harder part is making it work every day. I’ve helped teams take that next step with solution blueprints, build documentation, and test plans. At Sierra, I want to stay with the customer through launch, see whether patients and members get the help they called for, and use what we learn to improve the next workflow.</p>
+            </section>
             <p class="voice-note">The simulation runs in this browser with mock scheduling and case records. The test design draws on <a href="https://www.servicenow.com/docs/r/intelligent-experiences/test-ai-voice-agents.html">ServiceNow’s voice agent testing</a> and <a href="https://www.servicenow.com/docs/r/intelligent-experiences/deploy-ai-agents-for-voice.html">handoff patterns</a>.</p>
           </section>
         </div>
@@ -254,8 +263,8 @@
               <p>I built a Claude skill so solution consultants could create customer-specific demos quickly and accurately. Senior leadership approved it, and it’s now widely used across my business unit.</p>
             </article>
             <article>
-              <h4>Reusable health plan demo environment</h4>
-              <p>I built the demo environment and wrote talk tracks the team reused across three health plan accounts.</p>
+              <h4>Reusable payer demo environment</h4>
+              <p>I built a demo environment and talk tracks account teams could adapt to each health plan’s workflows. <a href="#payer-workflow">See how I used it in a payer evaluation.</a></p>
             </article>
             <article>
               <h4>Lab guides and implementation handoffs</h4>

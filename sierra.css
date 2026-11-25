@@ -341,9 +341,15 @@ h3 { font-size: clamp(1.175rem, 1.8vw, 1.45rem); font-weight: 650; line-height: 
   line-height: .98;
 }
 
+.featured-cases, .case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
 .featured-case {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, .75fr);
+  grid-template-rows: 1fr auto;
   overflow: hidden;
   border: 1px solid #d8e7df;
   border-radius: clamp(1.1rem, 2.5vw, 2rem);
@@ -351,24 +357,34 @@ h3 { font-size: clamp(1.175rem, 1.8vw, 1.45rem); font-weight: 650; line-height: 
   box-shadow: var(--panel-shadow);
 }
 
-.featured-copy, .featured-result { padding: clamp(1.4rem, 4.3vw, 3.8rem); }
+.featured-copy, .featured-result { padding-inline: clamp(1.25rem, 3vw, 2.75rem); }
+.featured-copy { padding-block: clamp(1.25rem, 2.55vw, 2.25rem); }
+
+@supports (grid-template-rows: subgrid) {
+  .featured-cases { row-gap: 0; }
+  .featured-case { grid-row: span 2; grid-template-rows: subgrid; }
+}
 
 .featured-copy h3 {
   margin: .72rem 0 .95rem;
   font-family: var(--serif);
-  font-size: clamp(2.25rem, 4.3vw, 4.65rem);
+  font-size: clamp(2.3rem, 4vw, 3.95rem);
   font-weight: 400;
   line-height: 1;
   letter-spacing: -.022em;
+  text-wrap: balance;
 }
 
-.featured-copy > p:last-child { max-width: 66ch; color: var(--muted); font-size: 1.04rem; }
+.featured-copy > p:not(.eyebrow) { max-width: 58ch; color: var(--muted); font-size: 1.04rem; }
+.featured-reuse { margin-top: .9rem; padding-top: .8rem; border-top: 1px solid var(--line); }
+.featured-reuse strong { color: var(--deep); }
 
 .featured-result {
   display: flex;
+  min-height: 10.5rem;
   flex-direction: column;
-  justify-content: center;
   gap: .65rem;
+  padding-block: clamp(1.25rem, 2vw, 1.8rem);
   background:
     var(--grain),
     radial-gradient(ellipse 93% 124% at 103% -17%, #929dd4, transparent 85%),
@@ -378,9 +394,17 @@ h3 { font-size: clamp(1.175rem, 1.8vw, 1.45rem); font-weight: 650; line-height: 
   color: var(--deep);
 }
 
-.featured-result-title { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.65rem); line-height: 1; }
+.featured-case-payer .featured-result {
+  background:
+    var(--grain),
+    radial-gradient(ellipse 88% 112% at 103% -10%, #8bcbd0, transparent 86%),
+    radial-gradient(ellipse 106% 100% at 41% 116%, #c3df87, transparent 85%),
+    linear-gradient(142deg, #f0f6d5, #b8e6dc);
+}
 
-.case-grid, .approach-grid {
+.featured-result-title { font-family: var(--serif); font-size: clamp(2.2rem, 3.6vw, 3.45rem); line-height: 1; }
+
+.approach-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
@@ -401,7 +425,6 @@ h3 { font-size: clamp(1.175rem, 1.8vw, 1.45rem); font-weight: 650; line-height: 
 }
 
 .case-card:nth-child(2) { --card-wash: #e2e9fa; }
-.case-card:nth-child(3) { --card-wash: #eaf1cf; }
 
 .case-card h3 { margin: .6rem 0 .7rem; }
 .case-card > p:not(.eyebrow), details p { color: var(--muted); }
@@ -758,6 +781,24 @@ details p { margin-top: .68rem; }
 .voice-note { max-width: 78ch; color: var(--muted); font-size: .87rem; }
 .voice-note a { text-underline-offset: .17em; }
 
+.demo-launch {
+  padding: clamp(1rem, 2.5vw, 2rem);
+  border: 1px solid #fcfff8;
+  border-radius: 1rem;
+  background: linear-gradient(130deg, #f9fcf2, #e4f3e9 63%, #e1edf7);
+  box-shadow: var(--panel-shadow);
+}
+
+.demo-launch h4 {
+  margin: 0 0 .5rem;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.9vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.04;
+}
+
+.demo-launch p { max-width: 68ch; color: var(--muted); }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -982,7 +1023,9 @@ details p { margin-top: .68rem; }
   .site-header nav { grid-column: 1 / -1; justify-content: space-between; gap: .35rem; }
   .site-header nav a { font-size: .85rem; padding-block: .2rem; }
 
-  .hero-inner, .featured-case, .leadership-layout, .field-assets-grid, .experience-heading, .education ul, .closing-inner, .approach-grid { grid-template-columns: 1fr; }
+  .hero-inner, .featured-cases, .leadership-layout, .field-assets-grid, .experience-heading, .education ul, .closing-inner, .approach-grid { grid-template-columns: 1fr; }
+  .featured-cases { row-gap: 1rem; }
+  .featured-case { grid-row: auto; grid-template-rows: auto auto; }
   .hero {
     --hero-veil: radial-gradient(ellipse 131% 62% at -9% 9%, #fffae3 3%, #f2f8e4 41%, #ebf8e4bd 67%, transparent 98%);
     padding-block: 2.55rem 2rem;
