@@ -3,161 +3,243 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Russ Mohammad is a healthcare and life sciences solution engineer at ServiceNow with a background in clinical medicine." />
-    <title>Russ Mohammad | Healthcare &amp; Life Sciences Solution Engineering</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="motion.css" />
-    <link rel="stylesheet" href="deep.css" />
-    <link rel="stylesheet" href="graphic.css" />
-    <link rel="stylesheet" href="landing.css" />
-    <link rel="stylesheet" href="landing-refine.css" />
-    <link rel="stylesheet" href="microsite.css" />
-    <link rel="stylesheet" href="explore.css" />
-    <link rel="stylesheet" href="recruiter-brief.css" />
-    <link rel="stylesheet" href="clarity.css" />
-    <link rel="stylesheet" href="one-page-experience.css" />
-    <link rel="stylesheet" href="leadership.css" />
-    <link rel="stylesheet" href="hero-refine.css" />
+    <meta name="theme-color" content="#f2f6ef" />
+    <meta name="description" content="Russ Mohammad, a healthcare and life sciences sales engineer. Selected AI evaluations, customer work, and why I’m interested in Sierra." />
+    <meta property="og:title" content="Russ Mohammad | Healthcare Sales Engineering" />
+    <meta property="og:description" content="Hands-on AI evaluations, healthcare customer work, and why I’m interested in Sierra." />
+    <meta property="og:image" content="https://russmohammad.com/nowruss-knowledge-conference-v2.webp" />
+    <meta property="og:url" content="https://russmohammad.com/" />
+    <link rel="canonical" href="https://russmohammad.com/" />
+    <title>Russ Mohammad | Healthcare Sales Engineering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..750&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" />
+    <link rel="stylesheet" href="sierra.css" />
+    <script src="sierra.js" defer></script>
   </head>
   <body>
-    <header class="nav-wrap">
-      <a class="nameplate" href="#top">RUSS MOHAMMAD</a>
-      <nav aria-label="Primary navigation">
-        <a href="#profile" aria-current="location">Perspective</a>
-        <a href="#evidence">Work</a>
-        <a href="#approach">Method</a>
-        <a href="#leadership">Leadership</a>
-        <a href="#experience">Background</a>
-      </nav>
-      <a class="contact-shortcut" href="mailto:nowrussmohammad@gmail.com">Get in touch</a>
+    <a class="skip-link" href="#top">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="nameplate" href="#top">Russ Mohammad</a>
+        <nav aria-label="Primary navigation">
+          <a href="#evidence">Work</a>
+          <a href="#approach">Approach</a>
+          <a href="#experience">Background</a>
+          <a href="#why-sierra">Why Sierra</a>
+        </nav>
+        <a class="button button-outline header-contact" href="#contact">Get in touch</a>
+      </div>
     </header>
-    <main id="top">
-      <section class="intro hero-landing" id="profile" aria-labelledby="intro-title">
-        <div class="intro-copy" data-reveal>
-          <p class="overline">Russ Mohammad · ServiceNow</p>
-          <h1 id="intro-title">Solution engineering<br /><em>for healthcare and life&nbsp;sciences.</em></h1>
-          <p class="intro-text">I started in clinical medicine, working with clinicians and IT on Epic workflows. Today I build hands-on demos and proofs of concept so customers can see how a new workflow or AI capability would fit into their day-to-day work.</p>
-          <div class="hero-actions"><a class="primary-action" href="#evidence">See customer work</a><a class="text-action" href="#approach">How I work</a></div>
-        </div>
-        <figure class="portrait portrait-event portrait-conference" data-reveal>
-          <picture><source srcset="nowruss-knowledge-conference-v2.webp" type="image/webp" /><img src="nowruss-knowledge-conference-v2.png" alt="Russ Mohammad presenting in a live conference setting" width="1536" height="1024" decoding="async" fetchpriority="high" /></picture>
-        </figure>
-      </section>
- 
-      <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title">
-        <div class="section-heading"><h2 id="evidence-title">Selected customer work</h2></div>
-        <div class="work-list">
-          <article class="work-card" id="ai-proof" data-reveal>
-            <p class="work-tag">Enterprise life sciences company · Competitive AI evaluation</p>
-            <h3>A hands-on AI proof of value</h3>
-            <p>A life sciences company was evaluating how to coordinate complex work across teams. I led the overall AI proof of value.</p>
-            <button class="work-toggle" type="button" aria-expanded="false" aria-controls="ai-proof-detail">How we approached it <span aria-hidden="true">+</span></button>
-            <div class="work-detail" aria-hidden="true" id="ai-proof-detail"><p>Our team built a guided experience that combined agentic skills and workflows. We gave participants realistic scenarios they could run themselves to evaluate how the proposed workflow would work.</p></div>
-            <p class="outcome"><span>Result</span> We secured the technical win, and ServiceNow was named vendor of choice for the ongoing $5M opportunity.</p>
-          </article>
-          <article class="work-card" id="research-workflow" data-reveal>
-            <p class="work-tag">National contract research organization · Renewal at risk</p>
-            <h3>Protecting an at-risk renewal</h3>
-            <p>Low adoption put the customer’s renewal at risk. I reopened discovery across its business units, uncovered use cases beyond patient services, and found workflows the teams could share.</p>
-            <button class="work-toggle" type="button" aria-expanded="false" aria-controls="research-workflow-detail">How we approached it <span aria-hidden="true">+</span></button>
-            <div class="work-detail" aria-hidden="true" id="research-workflow-detail"><p>I built an Art of the Possible demo with 150 sample patient records, 400 cases, and 600 interactions. It showed how the teams could connect intake, case management, AI-assisted analysis, and follow-up. I also brought in ServiceNow advisory support to address an implementation funding gap.</p></div>
-            <p class="outcome"><span>Result</span> We prevented a debook and opened a $1M expansion opportunity.</p>
-          </article>
-          <article class="work-card" id="quality-workflow" data-reveal>
-            <p class="work-tag">Global medtech manufacturer · Quality management</p>
-            <h3>Avoiding technical debt in an 8D migration</h3>
-            <p>The customer’s implementation partner proposed customizing Customer Service Management to handle 8D corrective actions. I found a purpose-built option that covered the workflow and avoided the technical debt of a custom build.</p>
-            <button class="work-toggle" type="button" aria-expanded="false" aria-controls="quality-workflow-detail">How we approached it <span aria-hidden="true">+</span></button>
-            <div class="work-detail" aria-hidden="true" id="quality-workflow-detail"><p>I verified with product specialists that Quality Issue Management in Manufacturing Commercial Operations already supported 8D. I recommended that capability with a standard portal for supplier submissions, so the customer could proceed using features available at the time.</p></div>
-            <p class="outcome"><span>Result</span> We created an upsell opportunity and gave the customer a solution that would be easier to adopt and maintain.</p>
-          </article>
-        </div>
-      </section>
 
-      <section class="decision-atlas method-brief" id="approach" aria-labelledby="layers-title">
-        <div class="operator-brief-intro" id="layers">
-          <p class="overline">Method</p>
-          <h2 id="layers-title">How I lead technical evaluations</h2>
-        </div>
-        <div class="operator-principles">
-          <article>
-            <h3>Find and refine use cases</h3>
-            <p>I ask people to walk me through how they work today. The handoffs, workarounds, and exceptions tell me where to dig. I use those details to narrow the problem with the customer and agree on what we need to prove.</p>
-            <a class="text-action" href="#research-workflow">See the renewal case</a>
-          </article>
-          <article>
-            <h3>Build around the customer’s workflow</h3>
-            <p>I build demos and proofs of value around scenarios the customer recognizes, including the exceptions that make the workflow hard. When AI is part of the solution, I give people a way to try it themselves and see where it helps.</p>
-            <a class="text-action" href="#ai-proof">See the hands-on AI evaluation</a>
-          </article>
-          <article>
-            <h3>Make the technical call</h3>
-            <p>I compare the options against the customer’s requirements, verify what the platform supports today, and make a recommendation. I spell out where customization is worth it and what the customer would have to maintain.</p>
-            <a class="text-action" href="#quality-workflow">See the 8D migration case</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="explore-search" aria-labelledby="explore-title" data-reveal>
-        <div class="explore-search-copy"><h2 id="explore-title">Search the site</h2></div>
-        <div class="explore-search-tool">
-          <form id="site-search-form" role="search">
-            <label for="site-search">Search customer examples, leadership, or background</label>
-            <div class="search-input-wrap"><span aria-hidden="true">⌕</span><input id="site-search" type="search" autocomplete="off" placeholder="Try “AI workflow”" /><button type="submit">Search</button></div>
-          </form>
-          <div class="search-chips" aria-label="Suggested searches">
-            <button type="button" data-search-term="AI workflow">AI workflows</button>
-            <button type="button" data-search-term="Claude skill">Claude skill</button>
-            <button type="button" data-search-term="leadership">Leadership</button>
-            <button type="button" data-search-term="clinical operations">Clinical operations</button>
+    <main id="top" tabindex="-1">
+      <section class="hero" id="profile" aria-labelledby="intro-title">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Enterprise sales engineering</p>
+            <h1 id="intro-title">Hands-on sales engineering <em>for healthcare.</em></h1>
+            <p class="hero-intro">I started at Rush, working with clinicians and IT on Epic workflows. At ServiceNow, I lead technical evaluations for healthcare and life sciences customers and build proofs of value they can run themselves.</p>
+            <div class="actions">
+              <a class="button button-primary" href="#evidence">See customer work</a>
+              <a class="button button-outline" href="#why-sierra">Why Sierra</a>
+            </div>
           </div>
-          <div id="search-results" class="search-results" aria-live="polite"></div>
+          <figure class="hero-photo">
+            <img src="nowruss-knowledge-conference-v2.webp" width="1536" height="1024" alt="Russ Mohammad talking through a demo with an attendee at ServiceNow Knowledge" fetchpriority="high" decoding="async" />
+          </figure>
         </div>
       </section>
 
-      <section class="section leadership-section" id="leadership" data-reveal aria-labelledby="leadership-title">
-        <div class="section-heading leadership-heading"><p class="overline">Leadership</p><h2 id="leadership-title">Leading beyond my own deals</h2></div>
-        <div class="leadership-grid">
-          <article>
-            <h3>Technical leadership and deal strategy</h3>
-            <p>As Team Lead for an eight-person Regulated Industries solution consulting team at ServiceNow, I guide priority deals, bring in product specialists, and advise account teams on licensing and implementation scope. I coach peers through technical decisions, help interview candidates, and cover for our manager.</p>
+      <div class="container">
+        <dl class="scope" aria-label="Recent work at ServiceNow">
+          <div><dt>Strategic ARR supported through Q3 2026</dt><dd>$7M</dd></div>
+          <div><dt>Enterprise proofs of concept I built and led in 2026</dt><dd>3</dd></div>
+          <div><dt>Regulated Industries team I help lead</dt><dd>8 people</dd></div>
+        </dl>
+      </div>
+
+      <section class="container section" id="evidence" aria-labelledby="evidence-title">
+        <div class="section-heading">
+          <h2 id="evidence-title">Selected customer work</h2>
+        </div>
+
+        <article class="featured-case" id="ai-proof">
+          <div class="featured-copy">
+            <p class="eyebrow">Enterprise life sciences company</p>
+            <h3>A hands-on AI proof of value</h3>
+            <p>I led the technical evaluation for a customer working to coordinate a complex workflow across teams. We built a guided experience that combined agentic skills and workflows, so customer teams could run realistic scenarios themselves and judge how the proposed solution fit their work.</p>
+          </div>
+          <div class="featured-result">
+            <p class="eyebrow">Result</p>
+            <p class="featured-result-title">Technical win</p>
+            <p>ServiceNow was named vendor of choice for the ongoing $5M opportunity.</p>
+          </div>
+        </article>
+
+        <div class="case-grid">
+          <article class="case-card" id="research-workflow">
+            <p class="eyebrow">National contract research organization</p>
+            <h3>Protecting an at-risk renewal</h3>
+            <p>Low adoption put the renewal at risk. I reopened discovery across business units, found use cases beyond patient services, and built a demo around the workflows those teams could share.</p>
+            <details>
+              <summary>What I built</summary>
+              <p>I used sample patient records, cases, and interactions to show how intake, case management, AI-assisted analysis, and follow-up could work together. I also brought in advisory support to address an implementation funding gap.</p>
+            </details>
+            <div class="case-result"><strong>Result</strong><p>We prevented a debook and opened a $1M expansion opportunity.</p></div>
           </article>
-          <article id="claude-skill">
-            <h3>A Claude skill for building demos</h3>
-            <p>I built a Claude skill so solution consultants in my business unit could create customer-specific demos quickly and accurately. Senior leadership approved it, and it’s now widely used. I also built a payer demo environment and talk tracks that colleagues reused across accounts.</p>
+
+          <article class="case-card" id="payer-workflow">
+            <p class="eyebrow">Health plan</p>
+            <h3>Reframing a build-or-buy decision</h3>
+            <p>A health plan was weighing a custom intake app against a healthcare workflow. I rebuilt the onsite demo around the decision its operations and IT teams had to make, starting with intake, routing, and how more teams could use it.</p>
+            <details>
+              <summary>How I approached it</summary>
+              <p>The existing app relied on free-text intake. I used the customer’s own routing model to show what a structured workflow could support and flagged an open encryption question for follow-up.</p>
+            </details>
+            <div class="case-result"><strong>Result</strong><p>The customer signed an order form for ServiceNow’s healthcare solution.</p></div>
           </article>
-          <article>
-            <h3>Leading HCLS field enablement</h3>
-            <p>I lead recurring HCLS pillar calls and run enablement for solution consultants and account executives on industry use cases, customer service, order management, and CPQ. I organized and co-led HCLS Unlocked, with 58 core solution consultants invited, and taught hands-on proof-of-concept design through Learning Friday and the enterprise life sciences community.</p>
+
+          <article class="case-card" id="quality-workflow">
+            <p class="eyebrow">Global medtech manufacturer</p>
+            <h3>Avoiding technical debt in an 8D migration</h3>
+            <p>The implementation partner proposed customizing Customer Service Management to handle 8D corrective actions. I found an existing quality capability that fit the workflow.</p>
+            <details>
+              <summary>What I recommended</summary>
+              <p>I verified that Quality Issue Management already supported 8D and proposed a standard portal for supplier submissions. The customer could use capabilities already available at the time.</p>
+            </details>
+            <div class="case-result"><strong>Result</strong><p>We created an upsell opportunity and gave the customer a solution that would be easier to adopt and maintain.</p></div>
           </article>
         </div>
       </section>
 
-      <section class="section" id="experience" aria-labelledby="experience-title">
-        <div class="section-heading"><p class="overline">Background</p><h2 id="experience-title">From clinical medicine to enterprise presales</h2></div>
-        <div class="timeline one-page-experience">
-          <article class="role role-with-logo"><div class="role-brand"><img src="servicenow-brand.svg" alt="ServiceNow logo" /></div><div><p class="role-type">Enterprise solution consulting · HCLS</p><h3>Team Lead, Solution Consulting</h3><p class="role-date">2026 — Present</p><p>I lead technical evaluations for strategic healthcare and life sciences accounts alongside my team responsibilities.</p><ul><li>Supported $7M in annual recurring revenue through Q3 2026 across strategic accounts by building demos and proof environments.</li><li>Built and led three enterprise proofs of concept in 2026.</li><li>Nominated and approved for promotion to Advisory Solution Consultant, effective January 1, 2027.</li><li>Recognized with Q2 Sharp Elbows, Q3 Extra Mile, and MVP recognition; delivered a mainstage keynote at Chicago World Forum.</li></ul></div></article>
-          <article class="role role-with-logo"><div class="role-brand"><img src="servicenow-brand.svg" alt="ServiceNow logo" /></div><div><p class="role-type">Enterprise solution consulting · HCLS</p><h3>Senior Solution Consultant</h3><p class="role-date">2025</p><p>Turned discovery into technical evaluation plans and working demos across customer service, field service, sales, and order management.</p><ul><li>Supported 10+ sellers at a time across strategic accounts, RFP/RFI responses, and complex customer problems.</li><li>Built reusable demo environments, microsites, lab guides, executive decks, testing plans, and hands-on technical experiences.</li></ul></div></article>
-          <article class="role role-with-logo"><div class="role-brand"><img src="tracelink-brand.png" alt="TraceLink logo" /></div><div><p class="role-type">Life-sciences software</p><h3>Senior Solution Consultant</h3><p class="role-date">2023 — 2025</p><p>Led discovery, demos, and technical workshops for strategic life sciences accounts. I also mentored solution consultants and account executives.</p><ul><li>Contributed to $3.9M FY24 ARR after $3.2M FY23 across complex HCLS pursuits.</li><li>Earned an off-cycle promotion and two global SC of the Quarter awards.</li></ul></div></article>
-          <article class="role role-with-logo"><div class="role-brand"><img src="salsify-brand.svg" alt="Salsify logo" /></div><div><p class="role-type">CPG solution engineering</p><h3>Solution Engineer</h3><p class="role-date">2021 — 2023</p><p>Worked with consumer goods and retail customers, turning business and IT needs into demos and technical workshops.</p></div></article>
-          <article class="role role-with-logo"><div class="role-brand"><img src="rush-brand.png" alt="Rush University Medical Center logo" /></div><div><p class="role-type">Clinical medicine · Epic workflows</p><h3>Clinical Data Specialist</h3><p class="role-date">2016 — 2021</p><p>Worked with clinicians and IT to improve Epic Ambulatory workflows and reporting. Workflow adoption increased by 25%.</p></div></article>
+      <section class="approach section" id="approach" aria-labelledby="approach-title">
+        <div class="container">
+          <div class="section-heading" id="layers">
+            <p class="eyebrow">Approach</p>
+            <h2 id="approach-title">How I lead technical evaluations</h2>
+          </div>
+          <div class="approach-grid">
+            <article>
+              <h3>Find and refine use cases</h3>
+              <p>I ask people to walk me through how they work today. The handoffs, workarounds, and exceptions tell me where to dig. I use those details to narrow the problem with the customer and agree on what we need to prove.</p>
+              <a class="text-link" href="#research-workflow">See the renewal case</a>
+            </article>
+            <article>
+              <h3>Build around the customer’s workflow</h3>
+              <p>I build demos and proofs of value around scenarios the customer recognizes. When AI is part of the solution, I give people a way to try it themselves, including the exceptions that make the workflow hard.</p>
+              <a class="text-link" href="#ai-proof">See the AI evaluation</a>
+            </article>
+            <article>
+              <h3>Make the technical call</h3>
+              <p>I compare the options against the customer’s requirements, verify what the platform supports today, and make a recommendation. I spell out where customization is worth it and what the customer would have to maintain.</p>
+              <a class="text-link" href="#quality-workflow">See the 8D migration case</a>
+            </article>
+          </div>
+
+          <section class="evaluation" id="patient-access" aria-labelledby="evaluation-title">
+            <div class="evaluation-intro">
+              <p class="eyebrow">Scripted example with fictional data</p>
+              <h3 id="evaluation-title">What I’d test in a scheduling agent</h3>
+              <p>I’d start with a routine appointment change. The evaluation should show how the agent uses verified information and what it does when a person needs to take over.</p>
+              <div class="scenario-controls" role="group" aria-label="Scheduling test scenarios" hidden>
+                <button type="button" aria-pressed="true" aria-controls="scenario-result" data-scenario="available">Times available</button>
+                <button type="button" aria-pressed="false" aria-controls="scenario-result" data-scenario="unavailable">Scheduling unavailable</button>
+                <button type="button" aria-pressed="false" aria-controls="scenario-result" data-scenario="handoff">Patient asks for staff</button>
+              </div>
+            </div>
+            <div class="scenario" id="scenario-result" aria-live="polite" aria-atomic="true">
+              <div class="scenario-message">
+                <p class="eyebrow">Patient</p>
+                <p id="scenario-request">“I’d like to move my appointment.”</p>
+              </div>
+              <div class="scenario-message">
+                <p class="eyebrow">Example agent response</p>
+                <p id="scenario-response">“I found openings Tuesday at 10 a.m. and Thursday at 2 p.m. Which works for you?”</p>
+              </div>
+              <div class="scenario-check">
+                <p class="eyebrow">What I’d verify</p>
+                <p id="scenario-check">The times come from the scheduling system. The agent confirms a change only after the patient agrees and the system records it.</p>
+              </div>
+            </div>
+          </section>
         </div>
-        <a class="resume-banner" href="assets/Russ-Mohammad-Resume.pdf" target="_blank" rel="noreferrer"><span>PDF</span><strong>View my résumé</strong></a>
       </section>
 
-      <section class="field-notes photo-moment" id="field-notes" data-reveal aria-labelledby="field-notes-title">
-        <div class="field-notes-copy"><p class="overline">In the field</p><h2 id="field-notes-title">Cleveland ServiceNow User Group</h2></div>
-        <figure class="field-photo snug-photo photo-moment-frame"><picture><source srcset="nowruss-cleveland-snug.webp" type="image/webp" /><img src="nowruss-cleveland-snug.jpeg" alt="Russ presenting at Cleveland SNUG" width="5712" height="4284" loading="lazy" decoding="async" /></picture></figure>
+      <section class="container section" id="leadership" aria-labelledby="leadership-title">
+        <div class="section-heading">
+          <p class="eyebrow">Field leadership</p>
+          <h2 id="leadership-title">Leading beyond my own deals</h2>
+        </div>
+        <div class="leadership-layout">
+          <div class="leadership-notes">
+            <article id="claude-skill">
+              <h3>Building with AI for the field</h3>
+              <p>I built a Claude skill to help solution consultants create customer-specific demos quickly and accurately. Senior leadership approved it, and it’s now widely used across my business unit. I also built a payer demo environment and talk tracks that colleagues reused across accounts.</p>
+            </article>
+            <article>
+              <h3>Leading deals and developing the team</h3>
+              <p>As Team Lead for an eight-person Regulated Industries team, I guide priority deals, bring in product specialists, and advise account teams on licensing and implementation scope. I lead recurring healthcare and life sciences pillar calls and run field enablement. I organized and co-led HCLS Unlocked, with 58 core solution consultants invited.</p>
+            </article>
+          </div>
+          <div class="leadership-feature" id="field-notes">
+            <figure class="keynote-photo" id="keynote">
+              <img src="nowruss-mainstage-keynote.webp" width="768" height="1024" alt="Russ Mohammad delivering a live mainstage demo at ServiceNow’s Chicago World Forum" loading="lazy" decoding="async" />
+            </figure>
+          </div>
+        </div>
       </section>
- 
-      <section class="keynote photo-moment" id="keynote" data-reveal><div class="photo-moment-copy"><p class="overline">On the stage</p><h2>Chicago World Forum keynote</h2><p>I presented a live demo on the main stage.</p></div><figure class="photo-moment-frame"><picture><source srcset="nowruss-mainstage-keynote.webp" type="image/webp" /><img src="nowruss-mainstage-keynote.jpeg" alt="Russ Mohammad speaking from a podium during a live keynote demo" width="768" height="1024" loading="lazy" decoding="async" /></picture></figure></section>
 
-      <section class="keynote coffee-note photo-moment" data-reveal>
-        <div class="photo-moment-copy"><p class="overline">Outside of work</p><h2>Coffee, food,<br />and time in the sun.</h2><p>A few weekends a year, I work as a barista. I love a strong coffee, new restaurants, and a sunny vacation.</p></div>
-        <figure class="photo-moment-frame"><img src="nowruss-barista.jpg" alt="Russ Mohammad working as a barista" width="393" height="700" loading="lazy" decoding="async" /></figure>
+      <section class="container section experience" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <p class="eyebrow">Background</p>
+          <h2 id="experience-title">From clinical medicine to enterprise presales</h2>
+          <a class="text-link" href="assets/Russ-Mohammad-Resume.pdf">View résumé (PDF)</a>
+        </div>
+        <div class="experience-list">
+          <article class="role">
+            <img src="servicenow-brand.svg" width="92" height="34" alt="ServiceNow" loading="lazy" />
+            <div><h3>Team Lead, Solution Consulting</h3><p class="role-date">ServiceNow · 2026–present</p><p>I joined as a senior solution consultant in 2025. I now lead strategic healthcare and life sciences evaluations across CRM and industry workflows.</p></div>
+          </article>
+          <article class="role">
+            <img src="tracelink-brand.png" width="92" height="43" alt="TraceLink" loading="lazy" />
+            <div><h3>Senior Solution Consultant</h3><p class="role-date">TraceLink · 2023–2025</p><p>Led technical evaluations for life sciences accounts and contributed to $3.9M in FY24 annual recurring revenue.</p></div>
+          </article>
+          <article class="role">
+            <img src="salsify-brand.svg" width="92" height="30" alt="Salsify" loading="lazy" />
+            <div><h3>Solution Engineer</h3><p class="role-date">Salsify · 2021–2023</p><p>Built demos and ran technical workshops with consumer goods and retail teams.</p></div>
+          </article>
+          <article class="role">
+            <img src="rush-brand.png" width="92" height="48" alt="Rush University Medical Center" loading="lazy" />
+            <div><h3>Clinical Data Specialist</h3><p class="role-date">Rush University Medical Center · 2016–2021</p><p>Worked with clinicians and IT to improve Epic Ambulatory workflows and reporting. I earned a master’s in Physician Assistant Studies at Rush University.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing" id="why-sierra" aria-labelledby="sierra-title">
+        <div class="container closing-inner">
+          <div>
+            <p class="eyebrow">Why Sierra</p>
+            <h2 id="sierra-title">Making healthcare easier to navigate</h2>
+            <p>I keep coming back to Sierra because of the moments its healthcare team is working on. A patient needs to move an appointment. A member needs to understand their coverage. I’d love to bring my clinical background and hands-on presales experience to building agents that help people get those things done.</p>
+            <div class="closing-contact" id="contact">
+              <h3>Let’s chat.</h3>
+              <div class="actions">
+                <a class="button button-primary" href="mailto:nowrussmohammad@gmail.com">Email me</a>
+                <a class="button button-outline" href="https://www.linkedin.com/in/russmoh/">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <aside class="coffee-note" aria-labelledby="coffee-title">
+            <img src="nowruss-barista.jpg" width="393" height="700" alt="Russ Mohammad working as a barista" loading="lazy" decoding="async" />
+            <div><h3 id="coffee-title">Away from work</h3><p>A few weekends a year, I work as a barista. I love a strong coffee, new restaurants, and a sunny vacation.</p></div>
+          </aside>
+        </div>
       </section>
     </main>
-    <section class="contact-panel" data-reveal><h2>Get in touch</h2><div><a class="contact-button" href="mailto:nowrussmohammad@gmail.com">Email me</a><a class="contact-button phone" href="tel:+17087451695">Call me</a><a class="contact-button linkedin" href="https://www.linkedin.com/in/russmoh/" target="_blank" rel="noreferrer">LinkedIn</a></div></section>
-    <footer><p>Russ Mohammad</p><div class="footer-actions"><a class="footer-button" href="mailto:nowrussmohammad@gmail.com">Email</a><a class="footer-button" href="https://www.linkedin.com/in/russmoh/" target="_blank" rel="noreferrer">LinkedIn</a><a href="assets/Russ-Mohammad-Resume.pdf" target="_blank" rel="noreferrer">Resume</a></div></footer><script src="main.js"></script>
+
+    <footer class="container site-footer">
+      <p>Russ Mohammad · Chicago, IL</p>
+      <a class="text-link" href="assets/Russ-Mohammad-Resume.pdf">Résumé (PDF)</a>
+    </footer>
   </body>
 </html>
