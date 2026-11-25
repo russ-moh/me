@@ -1,5 +1,7 @@
 const demo = document.querySelector('#voice-demo');
 const testButtons = [...demo.querySelectorAll('[data-test]')];
+const testLinks = document.querySelectorAll('[data-open-test]');
+const callHeader = demo.querySelector('.voice-session-header');
 const runButton = demo.querySelector('#run-test');
 const resetButton = demo.querySelector('#reset-test');
 const listenButton = demo.querySelector('#listen-reply');
@@ -267,6 +269,7 @@ function render() {
   const labels = { verify: 'Awaiting verification', choose: 'Choose an eligible time', confirm: 'Awaiting confirmation', handoff: 'Handoff available' };
 
   callStatus.textContent = complete ? (session.caseRecord ? 'Case queued' : 'Reschedule confirmed') : labels[session.stage];
+  callHeader.dataset.stage = session.caseRecord ? 'queued' : session.stage;
   routeSteps.forEach((item, index) => {
     const phase = phases[index];
     item.dataset.state = phase;
@@ -313,6 +316,7 @@ function render() {
 function stopVoice() {
   if (playing) speech.cancel();
   playing = null;
+  delete callHeader.dataset.speaking;
   listenButton.textContent = 'Listen to reply';
 }
 
@@ -335,12 +339,17 @@ if (speech && 'SpeechSynthesisUtterance' in window) {
       if (playing === reply) stopVoice();
     };
     playing = reply;
+    callHeader.dataset.speaking = 'true';
     listenButton.textContent = 'Stop reply';
     speech.speak(reply);
   });
 }
 
 testButtons.forEach((button) => button.addEventListener('click', () => startTest(button.dataset.test)));
+testLinks.forEach((link) => {
+  link.hidden = false;
+  link.addEventListener('click', () => startTest(link.dataset.openTest));
+});
 resetButton.addEventListener('click', () => startTest(session.test));
 runButton.addEventListener('click', () => {
   stopVoice();

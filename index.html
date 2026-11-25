@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..750&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" />
-    <link rel="stylesheet" href="sierra.css?v=voice" />
-    <script src="sierra.js?v=voice" defer></script>
+    <link rel="stylesheet" href="sierra.css?v=depth" />
+    <script src="sierra.js?v=depth" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#top">Skip to content</a>
@@ -45,12 +45,28 @@
             <p class="hero-intro">I started at Rush, working with clinicians and IT on Epic workflows. At ServiceNow, I lead technical evaluations for healthcare and life sciences customers and build proofs of value they can run themselves.</p>
             <div class="actions">
               <a class="button button-primary" href="#evidence">See customer work</a>
-              <a class="button button-outline" href="#patient-access">Try the workflow</a>
             </div>
           </div>
-          <figure class="hero-photo">
-            <img src="nowruss-knowledge-conference-v2.webp" width="1536" height="1024" alt="Russ Mohammad talking through a demo with an attendee at ServiceNow Knowledge" fetchpriority="high" decoding="async" />
-          </figure>
+          <div class="hero-visual">
+            <figure class="hero-photo">
+              <img src="nowruss-knowledge-conference-v2.webp" width="1536" height="1024" alt="Russ Mohammad talking through a demo with an attendee at ServiceNow Knowledge" fetchpriority="high" decoding="async" />
+            </figure>
+            <div class="hero-demo">
+              <div class="hero-demo-heading">
+                <div>
+                  <p class="eyebrow">Try the voice agent</p>
+                  <p class="hero-demo-title">Patient access</p>
+                </div>
+                <div class="voice-signal" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="hero-demo-links">
+                <a href="#patient-access" data-open-test="reschedule">Reschedule a visit</a>
+                <a href="#patient-access" data-open-test="unverified" hidden>Test a handoff</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -162,9 +178,20 @@
 
               <div class="voice-session" id="voice-session">
                 <div class="voice-session-header">
-                  <div>
+                  <div class="voice-session-title">
                     <p class="eyebrow">Patient access</p>
                     <h4>Specialty appointment line</h4>
+                  </div>
+                  <div class="session-signal" aria-hidden="true">
+                    <div class="voice-signal">
+                      <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <div class="voice-signal">
+                      <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <div class="voice-signal">
+                      <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
                   </div>
                   <p class="voice-status" id="call-status">Awaiting verification</p>
                 </div>
@@ -246,19 +273,19 @@
         </div>
         <div class="experience-list">
           <article class="role">
-            <img class="role-logo" src="servicenow.jpg" width="1053" height="551" alt="" loading="lazy" />
+            <img class="role-logo role-logo-servicenow" src="assets/role-logos/servicenow.jpg" width="600" height="98" alt="" loading="lazy" />
             <div><h3>Team Lead, Solution Consulting</h3><p class="role-date">ServiceNow · 2026–present</p><p>I joined as a senior solution consultant in 2025. I now lead strategic healthcare and life sciences evaluations across CRM and industry workflows.</p></div>
           </article>
           <article class="role">
-            <img class="role-logo" src="tracelink-brand.png" width="2047" height="960" alt="" loading="lazy" />
+            <img class="role-logo role-logo-tracelink" src="assets/role-logos/tracelink.png" width="600" height="185" alt="" loading="lazy" />
             <div><h3>Senior Solution Consultant</h3><p class="role-date">TraceLink · 2023–2025</p><p>Led technical evaluations for life sciences accounts and contributed to $3.9M in FY24 annual recurring revenue.</p></div>
           </article>
           <article class="role">
-            <img class="role-logo" src="salsify.png" width="454" height="108" alt="" loading="lazy" />
+            <img class="role-logo role-logo-salsify" src="salsify.png" width="454" height="108" alt="" loading="lazy" />
             <div><h3>Solution Engineer</h3><p class="role-date">Salsify · 2021–2023</p><p>Built demos and ran technical workshops with consumer goods and retail teams.</p></div>
           </article>
           <article class="role">
-            <img class="role-logo" src="rush-brand.png" width="600" height="316" alt="" loading="lazy" />
+            <img class="role-logo role-logo-rush" src="assets/role-logos/rush.svg" width="171" height="38" alt="" loading="lazy" />
             <div><h3>Clinical Data Specialist</h3><p class="role-date">Rush University Medical Center · 2016–2021</p><p>Worked with clinicians and IT to improve Epic Ambulatory workflows and reporting. I earned a master’s in Physician Assistant Studies at Rush University.</p></div>
           </article>
         </div>
