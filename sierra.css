@@ -837,28 +837,31 @@ details p { margin-top: .68rem; }
 .field-assets-grid p { max-width: 52ch; color: var(--muted); }
 
 .experience {
-  display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-  gap: clamp(1.1rem, 5vw, 5rem);
+  --experience-width: 60rem;
   border-top: 1px solid var(--line);
 }
 
-.experience .section-heading { align-content: start; margin-bottom: 0; }
-.experience .text-link { margin-top: .5rem; }
-.experience-list { display: grid; align-content: start; }
+.experience > * { max-width: var(--experience-width); margin-inline: auto; }
+.experience-heading { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: .85rem 1.25rem; }
+.experience-heading .eyebrow { grid-column: 1 / -1; }
+.experience-heading h2 { text-wrap: balance; }
+.experience-heading .button { margin-bottom: .3rem; background: #ffffff91; }
+.experience-heading .button:hover { background: var(--mint); }
 
 .role {
   display: grid;
-  grid-template-columns: clamp(6.6rem, 10.75vw, 9.2rem) minmax(0, 1fr);
+  grid-template-columns: clamp(6.6rem, 12vw, 9.2rem) minmax(0, 1fr);
   align-items: start;
-  gap: clamp(.9rem, 1.8vw, 1.55rem);
-  padding: 1.3rem 0 1.4rem;
+  gap: .75rem clamp(1rem, 3.5vw, 3.2rem);
+  padding-block: clamp(1.15rem, 3vw, 1.95rem);
   border-bottom: 1px solid var(--line);
 }
 
 .role:first-child { border-top: 1px solid var(--line); }
 
 .role-logo {
+  grid-column: 1;
+  grid-row: 1 / span 2;
   width: min(100%, var(--logo-width));
   height: auto;
   align-self: start;
@@ -869,7 +872,34 @@ details p { margin-top: .68rem; }
 .role-logo-tracelink { --logo-width: 8.25rem; }
 .role-logo-salsify { --logo-width: 8.7rem; }
 .role-logo-rush { --logo-width: 6.8rem; }
-.role .role-date { margin: .3rem 0 .45rem; font-size: .88rem; font-weight: 650; }
+
+.role h3 { grid-column: 2; font-size: clamp(1.3rem, 2.4vw, 1.75rem); }
+.role-positions { grid-column: 2; display: grid; gap: .9rem; }
+.role-position + .role-position { padding-top: .85rem; border-top: 1px solid var(--line); }
+.role-position > p { margin-top: .35rem; }
+.role-title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .15rem .9rem; }
+.role-title h4, .education h4 { margin: 0; font-size: 1.06rem; line-height: 1.32; }
+.role-date { font-size: .88rem; font-weight: 650; }
+.role .role-note { color: var(--green); font-size: .9rem; font-weight: 650; }
+
+.education {
+  margin-top: clamp(1.6rem, 4vw, 2.7rem);
+  padding: clamp(1rem, 2.8vw, 2rem);
+  border: 1px solid #d3e4df;
+  border-radius: 1.15rem;
+  background: linear-gradient(140deg, #f7fae9, #e2f2ef 70%, #e9effa);
+}
+
+.education ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin: .9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.education p { margin-top: .28rem; color: var(--muted); }
 
 .closing {
   padding-block: clamp(3.65rem, 7vw, 6rem);
@@ -952,7 +982,7 @@ details p { margin-top: .68rem; }
   .site-header nav { grid-column: 1 / -1; justify-content: space-between; gap: .35rem; }
   .site-header nav a { font-size: .85rem; padding-block: .2rem; }
 
-  .hero-inner, .featured-case, .leadership-layout, .field-assets-grid, .experience, .closing-inner, .approach-grid { grid-template-columns: 1fr; }
+  .hero-inner, .featured-case, .leadership-layout, .field-assets-grid, .experience-heading, .education ul, .closing-inner, .approach-grid { grid-template-columns: 1fr; }
   .hero {
     --hero-veil: radial-gradient(ellipse 131% 62% at -9% 9%, #fffae3 3%, #f2f8e4 41%, #ebf8e4bd 67%, transparent 98%);
     padding-block: 2.55rem 2rem;
@@ -968,10 +998,9 @@ details p { margin-top: .68rem; }
   .keynote-photo { aspect-ratio: 1.5; }
 
   .coffee-note { grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr); }
-  .role { grid-template-columns: clamp(5.35rem, 24vw, 7rem) minmax(0, 1fr); gap: 0 .85rem; }
-  .role > div { display: contents; }
-  .role-logo { grid-row: span 2; }
-  .role > div > p:last-child { grid-column: 1 / -1; margin-top: .25rem; }
+  .role { grid-template-columns: clamp(5.35rem, 24vw, 7rem) minmax(0, 1fr); gap: .65rem .85rem; }
+  .role-logo { grid-row: 1; }
+  .role-positions { grid-column: 1 / -1; }
   .role-logo-rush { --logo-width: 4.85rem; }
   .role-logo-salsify { --logo-width: 5.7rem; }
 
