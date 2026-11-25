@@ -41,7 +41,7 @@
             <p class="hero-intro">I started at Rush, working with clinicians and IT on Epic workflows. At ServiceNow, I lead technical evaluations for healthcare and life sciences customers and build proofs of value they can run themselves.</p>
             <div class="actions">
               <a class="button button-primary" href="#evidence">See customer work</a>
-              <a class="button button-outline" href="#why-sierra">Why Sierra</a>
+              <a class="button button-outline" href="#patient-access">Try the workflow</a>
             </div>
           </div>
           <figure class="hero-photo">
@@ -138,27 +138,54 @@
 
           <section class="evaluation" id="patient-access" aria-labelledby="evaluation-title">
             <div class="evaluation-intro">
-              <p class="eyebrow">Scripted example with fictional data</p>
-              <h3 id="evaluation-title">What I’d test in a scheduling agent</h3>
-              <p>I’d start with a routine appointment change. The evaluation should show how the agent uses verified information and what it does when a person needs to take over.</p>
+              <div>
+                <p class="eyebrow">Scripted example with fictional data</p>
+                <h3 id="evaluation-title">What I’d test in a scheduling agent</h3>
+                <p>I’d start with a routine appointment change. The evaluation should show how the agent uses verified information and what it does when a person needs to take over.</p>
+              </div>
               <div class="scenario-controls" role="group" aria-label="Scheduling test scenarios" hidden>
-                <button type="button" aria-pressed="true" aria-controls="scenario-result" data-scenario="available">Times available</button>
-                <button type="button" aria-pressed="false" aria-controls="scenario-result" data-scenario="unavailable">Scheduling unavailable</button>
-                <button type="button" aria-pressed="false" aria-controls="scenario-result" data-scenario="handoff">Patient asks for staff</button>
+                <button type="button" aria-pressed="true" aria-controls="evaluation-display" data-scenario="available">Times available</button>
+                <button type="button" aria-pressed="false" aria-controls="evaluation-display" data-scenario="unavailable">Scheduling unavailable</button>
+                <button type="button" aria-pressed="false" aria-controls="evaluation-display" data-scenario="handoff">Patient asks for staff</button>
               </div>
             </div>
-            <div class="scenario" id="scenario-result" aria-live="polite" aria-atomic="true">
-              <div class="scenario-message">
-                <p class="eyebrow">Patient</p>
-                <p id="scenario-request">“I’d like to move my appointment.”</p>
+            <div class="evaluation-display" id="evaluation-display">
+              <div class="workflow-map" role="group" aria-labelledby="workflow-title">
+                <p class="eyebrow" id="workflow-title">Request path</p>
+                <div class="workflow-stem">
+                  <div class="workflow-node">
+                    <span>Patient</span>
+                    <strong id="path-request">Move an appointment</strong>
+                  </div>
+                  <div class="workflow-node">
+                    <span>Agent</span>
+                    <strong id="path-agent">Check for open times</strong>
+                  </div>
+                </div>
+                <div class="workflow-branches">
+                  <div class="workflow-node workflow-branch" id="path-scheduling" data-active="true">
+                    <span>Scheduling system</span>
+                    <strong id="path-scheduling-status">Times verified</strong>
+                  </div>
+                  <div class="workflow-node workflow-branch" id="path-staff" data-active="false">
+                    <span>Scheduling team</span>
+                    <strong id="path-staff-status">No handoff needed</strong>
+                  </div>
+                </div>
               </div>
-              <div class="scenario-message">
-                <p class="eyebrow">Example agent response</p>
-                <p id="scenario-response">“I found openings Tuesday at 10 a.m. and Thursday at 2 p.m. Which works for you?”</p>
-              </div>
-              <div class="scenario-check">
-                <p class="eyebrow">What I’d verify</p>
-                <p id="scenario-check">The times come from the scheduling system. The agent confirms a change only after the patient agrees and the system records it.</p>
+              <div class="scenario" id="scenario-result" aria-live="polite" aria-atomic="true">
+                <div class="scenario-message">
+                  <p class="eyebrow">Patient</p>
+                  <p id="scenario-request">“I’d like to move my appointment.”</p>
+                </div>
+                <div class="scenario-message">
+                  <p class="eyebrow">Example agent response</p>
+                  <p id="scenario-response">“I found openings Tuesday at 10 a.m. and Thursday at 2 p.m. Which works for you?”</p>
+                </div>
+                <div class="scenario-check">
+                  <p class="eyebrow">What I’d verify</p>
+                  <p id="scenario-check">The times come from the scheduling system. The agent confirms a change only after the patient agrees and the system records it.</p>
+                </div>
               </div>
             </div>
           </section>
@@ -197,19 +224,19 @@
         </div>
         <div class="experience-list">
           <article class="role">
-            <span class="role-logo"><img src="servicenow.jpg" width="1053" height="551" alt="" loading="lazy" /></span>
+            <img class="role-logo" src="servicenow.jpg" width="1053" height="551" alt="" loading="lazy" />
             <div><h3>Team Lead, Solution Consulting</h3><p class="role-date">ServiceNow · 2026–present</p><p>I joined as a senior solution consultant in 2025. I now lead strategic healthcare and life sciences evaluations across CRM and industry workflows.</p></div>
           </article>
           <article class="role">
-            <span class="role-logo"><img src="tracelink-brand.png" width="2047" height="960" alt="" loading="lazy" /></span>
+            <img class="role-logo" src="tracelink-brand.png" width="2047" height="960" alt="" loading="lazy" />
             <div><h3>Senior Solution Consultant</h3><p class="role-date">TraceLink · 2023–2025</p><p>Led technical evaluations for life sciences accounts and contributed to $3.9M in FY24 annual recurring revenue.</p></div>
           </article>
           <article class="role">
-            <span class="role-logo"><img src="salsify.png" width="454" height="108" alt="" loading="lazy" /></span>
+            <img class="role-logo" src="salsify.png" width="454" height="108" alt="" loading="lazy" />
             <div><h3>Solution Engineer</h3><p class="role-date">Salsify · 2021–2023</p><p>Built demos and ran technical workshops with consumer goods and retail teams.</p></div>
           </article>
           <article class="role">
-            <span class="role-logo"><img src="rush-brand.png" width="600" height="316" alt="" loading="lazy" /></span>
+            <img class="role-logo" src="rush-brand.png" width="600" height="316" alt="" loading="lazy" />
             <div><h3>Clinical Data Specialist</h3><p class="role-date">Rush University Medical Center · 2016–2021</p><p>Worked with clinicians and IT to improve Epic Ambulatory workflows and reporting. I earned a master’s in Physician Assistant Studies at Rush University.</p></div>
           </article>
         </div>
